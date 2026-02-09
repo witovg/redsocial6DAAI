@@ -1,5 +1,4 @@
-CREATE DATABASE redsocial6daai;
-USE redsocial6daai;
+
 
 -- Módulo Core y Usuarios (Grupos 2 y 7)
 -- Base del sistema: Identidad, seguridad y configuración.
