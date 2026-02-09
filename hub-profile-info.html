@@ -5157,151 +5157,57 @@
             <!-- WIDGET BOX CONTENT -->
             <div class="widget-box-content">
               <!-- FORM -->
-              <form class="form">
-                <!-- FORM ROW -->
-                <div class="form-row split">
-                  <!-- FORM ITEM -->
-                  <div class="form-item">
-                    <!-- FORM INPUT -->
-                    <div class="form-input small active">
-                      <label for="profile-job-1-title">Title or Place</label>
-                      <input type="text" id="profile-job-1-title" name="profile_job_1_title" value="Lead Costume Designer">
-                    </div>
-                    <!-- /FORM INPUT -->
-                  </div>
-                  <!-- /FORM ITEM -->
+            <form id="formEditarPerfil" class="form" method="post">
 
-                  <!-- FORM ROW -->
-                  <div class="form-row split">
-                    <!-- FORM ITEM -->
-                    <div class="form-item">
-                      <!-- FORM SELECT -->
-                      <div class="form-select">
-                        <label for="profile-job-1-year-started">Year Started</label>
-                        <select id="profile-job-1-year-started" name="profile_job_1_year_started">
-                          <option value="0">Select Year</option>
-                          <option value="1" selected>2015</option>
-                        </select>
-                        <!-- FORM SELECT ICON -->
-                        <svg class="form-select-icon icon-small-arrow">
-                          <use xlink:href="#svg-small-arrow"></use>
-                        </svg>
-                        <!-- /FORM SELECT ICON -->
-                      </div>
-                      <!-- /FORM SELECT -->
-                    </div>
-                    <!-- /FORM ITEM -->
-
-                    <!-- FORM ITEM -->
-                    <div class="form-item">
-                      <!-- FORM SELECT -->
-                      <div class="form-select">
-                        <label for="profile-job-1-year-ended">Year Ended</label>
-                        <select id="profile-job-1-year-ended" name="profile_job_1_year_ended">
-                          <option value="0">Select Year</option>
-                          <option value="1" selected>Now</option>
-                        </select>
-                        <!-- FORM SELECT ICON -->
-                        <svg class="form-select-icon icon-small-arrow">
-                          <use xlink:href="#svg-small-arrow"></use>
-                        </svg>
-                        <!-- /FORM SELECT ICON -->
-                      </div>
-                      <!-- /FORM SELECT -->
-                    </div>
-                    <!-- /FORM ITEM -->
+              <div class="form-row split">
+                <div class="form-item">
+                  <div class="form-input small active">
+                    <label>Profesión</label>
+                    <input type="text" name="profile_job_1_title"
+                          value="<?= htmlspecialchars($usuario['profesion']) ?>">
                   </div>
-                  <!-- /FORM ROW -->
                 </div>
-                <!-- /FORM ROW -->
+              </div>
 
-                <!-- FORM ROW -->
-                <div class="form-row">
-                  <!-- FORM ITEM -->
-                  <div class="form-item">
-                    <!-- FORM INPUT -->
-                    <div class="form-input small mid-textarea active">
-                      <label for="profile-job-1-description">Description</label>
-                      <textarea id="profile-job-1-description" name="profile_job_1_description">Lead Costume Designer for the "Amazzo Costumes" agency. I’m in charge of a ten person group, overseeing all the proyects and talking to potential clients. I also handle some face to face interviews for new candidates.</textarea>
-                    </div>
-                    <!-- /FORM INPUT -->
+              <div class="form-row">
+                <div class="form-item">
+                  <div class="form-input small mid-textarea active">
+                    <label>Biografía</label>
+                    <textarea name="profile_job_1_description"><?= htmlspecialchars($usuario['biografia']) ?></textarea>
                   </div>
-                  <!-- /FORM ITEM -->
                 </div>
-                <!-- /FORM ROW -->
+              </div>
 
-                <!-- FORM ROW -->
-                <div class="form-row split">
-                  <!-- FORM ITEM -->
-                  <div class="form-item">
-                    <!-- FORM INPUT -->
-                    <div class="form-input small">
-                      <label for="profile-job-2-title">Title or Place</label>
-                      <input type="text" id="profile-job-2-title" name="profile_job_2_title">
-                    </div>
-                    <!-- /FORM INPUT -->
+              <div class="form-row split">
+                <div class="form-item">
+                  <div class="form-input small">
+                    <label>Frase de estado</label>
+                    <input type="text" name="profile_job_2_title"
+                          value="<?= htmlspecialchars($usuario['frase_estado']) ?>">
                   </div>
-                  <!-- /FORM ITEM -->
-
-                  <!-- FORM ROW -->
-                  <div class="form-row split">
-                    <!-- FORM ITEM -->
-                    <div class="form-item">
-                      <!-- FORM SELECT -->
-                      <div class="form-select">
-                        <label for="profile-job-2-year-started">Year Started</label>
-                        <select id="profile-job-2-year-started" name="profile_job_2_year_started">
-                          <option value="0">Select Year</option>
-                          <option value="1" selected>2019</option>
-                        </select>
-                        <!-- FORM SELECT ICON -->
-                        <svg class="form-select-icon icon-small-arrow">
-                          <use xlink:href="#svg-small-arrow"></use>
-                        </svg>
-                        <!-- /FORM SELECT ICON -->
-                      </div>
-                      <!-- /FORM SELECT -->
-                    </div>
-                    <!-- /FORM ITEM -->
-
-                    <!-- FORM ITEM -->
-                    <div class="form-item">
-                      <!-- FORM SELECT -->
-                      <div class="form-select">
-                        <label for="profile-job-2-year-ended">Year Ended</label>
-                        <select id="profile-job-2-year-ended" name="profile_job_2_year_ended">
-                          <option value="0">Select Year</option>
-                          <option value="1" selected>2019</option>
-                        </select>
-                        <!-- FORM SELECT ICON -->
-                        <svg class="form-select-icon icon-small-arrow">
-                          <use xlink:href="#svg-small-arrow"></use>
-                        </svg>
-                        <!-- /FORM SELECT ICON -->
-                      </div>
-                      <!-- /FORM SELECT -->
-                    </div>
-                    <!-- /FORM ITEM -->
-                  </div>
-                  <!-- /FORM ROW -->
                 </div>
-                <!-- /FORM ROW -->
+              </div>
 
-                <!-- FORM ROW -->
-                <div class="form-row">
-                  <!-- FORM ITEM -->
-                  <div class="form-item">
-                    <!-- FORM INPUT -->
-                    <div class="form-input small mid-textarea">
-                      <label for="profile-job-2-description">Description</label>
-                      <textarea id="profile-job-2-description" name="profile_job_2_description"></textarea>
-                    </div>
-                    <!-- /FORM INPUT -->
+              <div class="form-row split">
+                <div class="form-item">
+                  <div class="form-input small">
+                    <label>País</label>
+                    <input type="text" name="profile_job_2_year_started"
+                          value="<?= htmlspecialchars($usuario['pais']) ?>">
                   </div>
-                  <!-- /FORM ITEM -->
                 </div>
-                <!-- /FORM ROW -->
-              </form>
+
+                <div class="form-item">
+                  <div class="form-input small">
+                    <label>Ciudad</label>
+                    <input type="text" name="profile_job_2_year_ended"
+                          value="<?= htmlspecialchars($usuario['ciudad']) ?>">
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="button primary">Guardar cambios</button>
+            </form>
               <!-- /FORM -->
 
               <!-- BUTTON -->
@@ -5346,5 +5252,7 @@
 <script src="js/form/form.utils.js"></script>
 <!-- SVG icons -->
 <script src="js/utils/svg-loader.js"></script>
+
+<script src="editar-perfil.js"></script>
 </body>
 </html>
