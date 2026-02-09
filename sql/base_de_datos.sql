@@ -338,3 +338,20 @@ CREATE TABLE articulos_blog (
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_autor) REFERENCES usuarios(id_usuario)
 );
+
+-- Clave: 1234
+INSERT INTO usuarios (
+    nombre_usuario,
+    email,
+    hash_contrasena,
+    nombre_completo,
+    rol,
+    cuenta_verificada
+) VALUES (
+    'usuario_prueba',
+    'prueba@correo.com',
+    '$2y$10$Qk6uWl3jEwz0u8m5Yc3M0.9P6Xj0l6YzV6tN0sC1m2q9J4w6cR6pK',
+    'Usuario de Prueba',
+    'usuario',
+    TRUE
+);
