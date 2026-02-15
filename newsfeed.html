@@ -14,6 +14,33 @@
   <link rel="stylesheet" href="css/vendor/tiny-slider.css">
   <!-- favicon -->
   <link rel="icon" href="img/favicon.ico">
+  <!-- infinite scroll styles -->
+  <style>
+    #infinite-scroll-loader {
+      display: none;
+      justify-content: center;
+      padding: 24px 0;
+      transition: opacity .3s ease;
+    }
+
+    #infinite-scroll-loader.infinite-scroll-active {
+      display: flex;
+    }
+
+    .infinite-scroll-end-msg {
+      text-align: center;
+      padding: 28px 16px;
+      margin-top: 16px;
+    }
+
+    .infinite-scroll-end-msg p {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .9375rem;
+      font-weight: 700;
+      color: #9aa4bf;
+      letter-spacing: .3px;
+    }
+  </style>
   <title>Vikinger | Newsfeed</title>
 </head>
 
@@ -10392,8 +10419,8 @@
         </div>
         <!-- /NEWSFEED ITEMS GRID -->
 
-        <!-- LOADER BARS -->
-        <div class="loader-bars">
+        <!-- LOADER BARS (Infinite Scroll) -->
+        <div id="infinite-scroll-loader" class="loader-bars">
           <div class="loader-bar"></div>
           <div class="loader-bar"></div>
           <div class="loader-bar"></div>
@@ -10403,7 +10430,7 @@
           <div class="loader-bar"></div>
           <div class="loader-bar"></div>
         </div>
-        <!-- /LOADER BARS -->
+        <!-- /LOADER BARS (Infinite Scroll) -->
       </div>
       <!-- /GRID COLUMN -->
 
@@ -13353,6 +13380,8 @@
   <script src="js/utils/svg-loader.js"></script>
   <!-- widgets -->
   <script src="js/widgets/widgets.js"></script>
+  <!-- infinite scroll -->
+  <script src="js/content/infinite-scroll.js"></script>
 </body>
 
 </html>
