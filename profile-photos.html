@@ -11,6 +11,35 @@
   <link rel="stylesheet" href="css/vendor/simplebar.css">
   <!-- tiny-slider styles -->
   <link rel="stylesheet" href="css/vendor/tiny-slider.css">
+  <!-- GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <!-- Custom styles for lightbox -->
+  <style>
+    .photo-preview {
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .photo-preview:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .photo-preview a.glightbox {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .glightbox-container {
+      z-index: 9999;
+    }
+    
+    .glight-image img {
+      max-width: 95vw;
+      max-height: 95vh;
+    }
+  </style>
   <!-- favicon -->
   <link rel="icon" href="img/favicon.ico">
   <title>Vikinger | Profile</title>
@@ -4945,9 +4974,11 @@
         <!-- PHOTO PREVIEW -->
         <div class="photo-preview popup-picture-trigger">
           <!-- PHOTO PREVIEW IMAGE -->
-          <figure class="photo-preview-image liquid">
-            <img src="img/cover/06.jpg" alt="photo-preview-06">
-          </figure>
+          <a href="img/cover/06.jpg" class="glightbox" data-gallery="gallery1" title="Photo Gallery">
+            <figure class="photo-preview-image liquid">
+              <img src="img/cover/06.jpg" alt="photo-preview-06">
+            </figure>
+          </a>
           <!-- /PHOTO PREVIEW IMAGE -->
       
           <!-- PHOTO PREVIEW INFO -->
@@ -4991,8 +5022,9 @@
         <!-- PHOTO PREVIEW -->
         <div class="photo-preview popup-picture-trigger">
           <!-- PHOTO PREVIEW IMAGE -->
-          <figure class="photo-preview-image liquid">
-            <img src="img/cover/16.jpg" alt="photo-preview-16">
+          <a href="img/cover/16.jpg" class="glightbox" data-gallery="gallery1" title="Photo Gallery">
+            <figure class="photo-preview-image liquid">
+              <img src="img/cover/16.jpg" alt="photo-preview-16">
           </figure>
           <!-- /PHOTO PREVIEW IMAGE -->
       
@@ -5361,8 +5393,8 @@
           <!-- PHOTO PREVIEW IMAGE -->
           <figure class="photo-preview-image liquid">
             <img src="img/cover/15.jpg" alt="photo-preview-15">
-          </figure>
-          <!-- /PHOTO PREVIEW IMAGE -->
+            </figure>
+          </a>
       
           <!-- PHOTO PREVIEW INFO -->
           <div class="photo-preview-info">
@@ -7034,5 +7066,40 @@
 <script src="js/form/form.utils.js"></script>
 <!-- SVG icons -->
 <script src="js/utils/svg-loader.js"></script>
+<!-- GLightbox -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  // Convertir todas las imágenes de la galería a lightbox
+  document.addEventListener('DOMContentLoaded', function() {
+    const photoMasonry = document.querySelector('.photos-masonry');
+    if (photoMasonry) {
+      const figures = photoMasonry.querySelectorAll('.photo-preview-image img');
+      figures.forEach((img) => {
+        const figure = img.closest('.photo-preview-image');
+        const photoPreview = figure.closest('.photo-preview');
+        if (figure && photoPreview && !figure.parentElement.tagName === 'A') {
+          // Crear enlace para el lightbox
+          const link = document.createElement('a');
+          link.href = img.src;
+          link.className = 'glightbox';
+          link.setAttribute('data-gallery', 'gallery1');
+          link.setAttribute('title', 'Photo Gallery');
+          
+          // Reemplazar la estructura
+          figure.parentNode.insertBefore(link, figure);
+          link.appendChild(figure);
+        }
+      });
+    }
+    
+    // Inicializar GLightbox
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true
+    });
+  });
+</script>
 </body>
 </html>
+.
